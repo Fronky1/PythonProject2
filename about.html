@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас — Оазис SPA в Губкине</title>
+    <meta name="description" content="История салона Оазис — ваш персональный оазис релакса и красоты в Губкине">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .heading { font-family: 'Playfair Display', serif; }
+
+        .section-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-[#F5F0E8] text-[#2E2A26]">
+
+    <!-- Навигация (такая же как в index.html) -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-[#D4BFA8]/20">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="heading text-3xl font-semibold text-[#2E4F3C]">ОАЗИС</div>
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-[#2E4F3C]">Главная</a>
+                <a href="about.html" class="text-[#2E4F3C] font-semibold">О нас</a>
+                <a href="#services" class="hover:text-[#2E4F3C]">Услуги</a>
+                <a href="#certificates" class="hover:text-[#2E4F3C]">Сертификаты</a>
+            </div>
+            <a href="#" class="bg-[#2E4F3C] text-white px-8 py-3.5 rounded-full text-sm font-medium">Записаться</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="min-h-screen bg-cover bg-center flex items-center relative pt-20"
+             style="background-image: linear-gradient(rgba(46,79,60,0.5), rgba(46,79,60,0.5)), url('assets/images/about-hero.jpg');">
+        <div class="max-w-4xl mx-auto px-6 text-center text-white">
+            <h1 class="heading text-6xl md:text-7xl font-light leading-tight mb-6">
+                Наш оазис — это<br>ваше спокойствие
+            </h1>
+            <p class="text-2xl max-w-2xl mx-auto">
+                Семейный спа-салон в Губкине, где забота о вас стоит на первом месте
+            </p>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <div class="max-w-4xl mx-auto px-6 py-20 space-y-24">
+
+        <!-- История -->
+        <div class="section-fade">
+            <h2 class="heading text-5xl font-light mb-8">Наша история</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Салон «Оазис» был создан с искренним желанием подарить жителям Губкина настоящее место силы и восстановления.
+                Мы верим, что красота начинается с внутреннего спокойствия и гармонии.
+            </p>
+            <p class="text-lg leading-relaxed">
+                За годы работы мы помогли сотням женщин почувствовать себя ухоженными, отдохнувшими и уверенными.
+                Каждый день мы стремимся делать процедуры не просто услугой, а настоящим ритуалом заботы о себе.
+            </p>
+        </div>
+
+        <!-- Что нас отличает -->
+        <div class="section-fade">
+            <h2 class="heading text-5xl font-light mb-10">Что нас отличает</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-2xl font-medium mb-4 text-[#2E4F3C]">Индивидуальный подход</h3>
+                    <p class="text-base">Каждый клиент для нас — уникальный. Мы подбираем процедуры именно под ваше состояние кожи, настроение и пожелания.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-medium mb-4 text-[#2E4F3C]">Натуральная косметика</h3>
+                    <p class="text-base">Мы используем только проверенные профессиональные средства с натуральным составом.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-medium mb-4 text-[#2E4F3C]">Опытные мастера</h3>
+                    <p class="text-base">Наша команда регулярно проходит обучение и повышает квалификацию.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-medium mb-4 text-[#2E4F3C]">Атмосфера полного релакса</h3>
+                    <p class="text-base">Приватность, приятная музыка, ароматерапия — всё создано для глубокого отдыха.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Наши ценности -->
+        <div class="section-fade">
+            <h2 class="heading text-5xl font-light mb-10">Наши ценности</h2>
+            <ul class="space-y-8 text-lg">
+                <li class="flex gap-6">
+                    <span class="text-4xl text-[#D4BFA8]">01</span>
+                    <div>
+                        <strong>Забота и внимание</strong> — к каждому гостю
+                    </div>
+                </li>
+                <li class="flex gap-6">
+                    <span class="text-4xl text-[#D4BFA8]">02</span>
+                    <div>
+                        <strong>Качество без компромиссов</strong> — в процедурах и материалах
+                    </div>
+                </li>
+                <li class="flex gap-6">
+                    <span class="text-4xl text-[#D4BFA8]">03</span>
+                    <div>
+                        <strong>Чистота и безопасность</strong> — строгие стандарты стерилизации
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        // Анимация при скролле
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.section-fade');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
