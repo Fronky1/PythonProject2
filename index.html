@@ -408,25 +408,7 @@
     </section>
 
     <!-- Здесь будут другие секции -->
+    <script src="assets/js/main.js"></script>
 
-     <script>
-        // Появление кнопки "Записаться" в шапке после скролла
-        const navbar = document.getElementById('navbar');
-        const bookingBtn = document.getElementById('nav-booking-btn');
-
-        function handleScroll() {
-            if (window.scrollY > 600) {                    // 600px — высота Hero примерно
-                bookingBtn.classList.remove('hidden');
-                bookingBtn.classList.add('opacity-100', 'translate-y-0');
-            } else {
-                bookingBtn.classList.add('hidden');
-                bookingBtn.classList.remove('opacity-100', 'translate-y-0');
-            }
-        }
-
-        // Запускаем при скролле и сразу при загрузке
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('load', handleScroll);
-    </script>
 </body>
 </html>
