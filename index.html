@@ -57,19 +57,30 @@
     </nav>
 
 
-    <!-- HERO -->
-    <section class="min-h-screen bg-cover bg-center flex items-center relative"
-             style="background-image: linear-gradient(rgba(46, 79, 60, 0.45), rgba(46, 79, 60, 0.45)), url('assets/images/hero.jpg');">
+        <!-- HERO -->
+    <section id="hero" class="min-h-screen bg-cover bg-center flex items-center relative overflow-hidden"
+             style="background-image: linear-gradient(rgba(46, 79, 60, 0.45), rgba(46, 79, 60, 0.55)), url('assets/images/hero.jpg');">
 
-        <div class="max-w-5xl mx-auto px-6 text-center text-white pt-20">
-            <h1 class="heading-font text-6xl md:text-7xl font-light leading-tight mb-6">
-                Ваш персональный<br>оазис в Губкине
+        <!-- Лёгкий overlay для глубины -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#2E4F3C]/30"></div>
+
+        <div class="max-w-5xl mx-auto px-6 text-center text-white relative z-10 pt-20">
+
+            <!-- Анимированный заголовок -->
+            <h1 id="hero-title"
+                class="heading-font text-6xl md:text-7xl font-light leading-tight mb-6 opacity-0 translate-y-10 transition-all duration-1000">
+                Ваш персональный<br>Оазис
             </h1>
-            <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-12 text-white/90">
+
+            <!-- Анимированный подзаголовок -->
+            <p id="hero-subtitle"
+               class="text-xl md:text-2xl max-w-2xl mx-auto mb-12 text-white/90 opacity-0 translate-y-10 transition-all duration-1000 delay-300">
                 Место, где тело отдыхает, а душа наполняется гармонией и спокойствием
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+            <!-- Кнопки с задержкой -->
+            <div id="hero-buttons"
+                 class="flex flex-col sm:flex-row gap-5 justify-center opacity-0 translate-y-10 transition-all duration-1000 delay-700">
                 <a href="#booking"
                    class="bg-white text-[#2E4F3C] px-10 py-5 rounded-full text-lg font-medium hover:scale-105 transition-all">
                     Записаться онлайн
@@ -82,7 +93,7 @@
         </div>
 
         <!-- Прокрутка вниз -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-0 transition-all duration-1000 delay-1000" id="scroll-hint">
             <span class="text-white/70 text-sm tracking-widest">Прокрутить вниз</span>
             <div class="w-px h-12 bg-white/30 mt-3"></div>
         </div>
@@ -280,14 +291,6 @@
 
             </div>
 
-            <!-- Кнопка "Все услуги" -->
-            <div class="text-center mt-12">
-                <a href="#"
-                   class="inline-block border-2 border-[#2E4F3C] text-[#2E4F3C] px-10 py-4 rounded-full text-lg font-medium hover:bg-[#2E4F3C] hover:text-white transition-all">
-                    Посмотреть все услуги
-                </a>
-            </div>
-
         </div>
     </section>
 
@@ -401,6 +404,83 @@
                 <a href="#"
                    class="inline-block bg-[#2E4F3C] text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-[#1F3A2B] transition-all">
                     Посмотреть больше результатов
+                </a>
+            </div>
+
+        </div>
+    </section>
+            <!-- НАША КОМАНДА / ВЫБРАТЬ СПЕЦИАЛИСТА -->
+    <section id="team" class="py-24 bg-[#F5F0E8]">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Заголовок -->
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-5xl md:text-6xl font-light text-[#2E4F3C] mb-4">
+                    Наша команда
+                </h2>
+                <p class="max-w-2xl mx-auto text-lg text-[#4A4038]">
+                    Опытные специалисты, которые искренне заботятся о вашем комфорте и результате
+                </p>
+            </div>
+
+            <!-- Сетка специалистов -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <!-- Специалист 1 -->
+                <div class="section-fade bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all group">
+                    <div class="h-80 bg-cover bg-center"
+                         style="background-image: url('assets/images/master1.jpg');"></div>
+                    <div class="p-8 text-center">
+                        <h3 class="heading-font text-3xl font-light text-[#2E4F3C]">Анна Смирнова</h3>
+                        <p class="text-[#6B5E52] mt-1 mb-4">Мастер эстетики лица и косметолог</p>
+                        <p class="text-sm text-[#4A4038] mb-6">Стаж 9 лет • Более 1200 довольных клиенток</p>
+
+                        <a href="https://arn.su/7EM" target="_blank"
+                           class="inline-block w-full bg-[#2E4F3C] text-white py-4 rounded-2xl font-medium hover:bg-[#1F3A2B] transition-all">
+                            Выбрать специалиста
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Специалист 2 -->
+                <div class="section-fade bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all group">
+                    <div class="h-80 bg-cover bg-center"
+                         style="background-image: url('assets/images/master2.jpg');"></div>
+                    <div class="p-8 text-center">
+                        <h3 class="heading-font text-3xl font-light text-[#2E4F3C]">Елена Кравцова</h3>
+                        <p class="text-[#6B5E52] mt-1 mb-4">Массажист • Специалист по коррекции фигуры</p>
+                        <p class="text-sm text-[#4A4038] mb-6">Стаж 7 лет • Автор авторских SPA-ритуалов</p>
+
+                        <a href="https://arn.su/7EM" target="_blank"
+                           class="inline-block w-full bg-[#2E4F3C] text-white py-4 rounded-2xl font-medium hover:bg-[#1F3A2B] transition-all">
+                            Выбрать специалиста
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Специалист 3 -->
+                <div class="section-fade bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all group">
+                    <div class="h-80 bg-cover bg-center"
+                         style="background-image: url('assets/images/master3.jpg');"></div>
+                    <div class="p-8 text-center">
+                        <h3 class="heading-font text-3xl font-light text-[#2E4F3C]">Мария Власова</h3>
+                        <p class="text-[#6B5E52] mt-1 mb-4">Стилист • Колорист • Парикмахер</p>
+                        <p class="text-sm text-[#4A4038] mb-6">Стаж 11 лет • Более 50 видов окрашивания</p>
+
+                        <a href="https://arn.su/7EM" target="_blank"
+                           class="inline-block w-full bg-[#2E4F3C] text-white py-4 rounded-2xl font-medium hover:bg-[#1F3A2B] transition-all">
+                            Выбрать специалиста
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Кнопка "Все специалисты" -->
+            <div class="text-center mt-14">
+                <a href="https://arn.su/7EM" target="_blank"
+                   class="inline-block border-2 border-[#2E4F3C] text-[#2E4F3C] px-12 py-5 rounded-full text-lg font-medium hover:bg-[#2E4F3C] hover:text-white transition-all">
+                    Посмотреть всех специалистов
                 </a>
             </div>
 
