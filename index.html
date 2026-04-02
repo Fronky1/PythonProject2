@@ -34,8 +34,8 @@
 </head>
 <body class="bg-[#F5F0E8] text-[#2E2A26] leading-relaxed">
 
-    <!-- НАВИГАЦИЯ -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-[#D4BFA8]/20">
+        <!-- НАВИГАЦИЯ -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-[#D4BFA8]/20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="heading-font text-3xl font-semibold tracking-tight text-[#2E4F3C]">
                 ОАЗИС
@@ -47,12 +47,14 @@
                 <a href="#team" class="hover:text-[#2E4F3C] transition-colors">Команда</a>
             </div>
 
-            <a href="#booking"
-               class="bg-[#2E4F3C] hover:bg-[#1F3A2B] text-white px-8 py-3.5 rounded-full text-sm font-medium transition-all">
+            <!-- Кнопка в шапке — будет появляться при скролле -->
+            <a id="nav-booking-btn" href="#booking"
+               class="hidden md:inline-block bg-[#2E4F3C] hover:bg-[#1F3A2B] text-white px-8 py-3.5 rounded-full text-sm font-medium transition-all opacity-0 translate-y-2">
                 Записаться
             </a>
         </div>
     </nav>
+
 
     <!-- HERO -->
     <section class="min-h-screen bg-cover bg-center flex items-center relative"
@@ -406,6 +408,24 @@
 
     <!-- Здесь будут другие секции -->
 
-    <script src="assets/js/main.js"></script>
+     <script>
+        // Появление кнопки "Записаться" в шапке после скролла
+        const navbar = document.getElementById('navbar');
+        const bookingBtn = document.getElementById('nav-booking-btn');
+
+        function handleScroll() {
+            if (window.scrollY > 600) {                    // 600px — высота Hero примерно
+                bookingBtn.classList.remove('hidden');
+                bookingBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                bookingBtn.classList.add('hidden');
+                bookingBtn.classList.remove('opacity-100', 'translate-y-0');
+            }
+        }
+
+        // Запускаем при скролле и сразу при загрузке
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+    </script>
 </body>
 </html>
